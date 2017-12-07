@@ -1,0 +1,109 @@
+{% load staticfiles %}
+<!doctype html>
+
+		<title>TELEFONOS AL DIA</title>
+
+	
+      
+<body background="https://st.depositphotos.com/3008028/3751/i/950/depositphotos_37513487-stock-photo-abstract-grey-background.jpg"> 
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Nixie+One|Corben:700|Wire+One|Oswald|Sansita+One|Permanent+Marker' rel='stylesheet' type='text/css'>
+
+	<div class="blog-masthead">
+        <div class="container">
+        <nav>
+			<ul>
+				<li><a href=”#”>Inicio</a></li>
+				<li><a href=”#”>Acerca de</a></li>
+				<li><a href=”#”>Preferencias</a></li>
+				<li><a href=”#”>Contactos</a></li>
+			<li class=”subscribe”><a href=”#”>Subscribe via. RSS</a></li>
+			</ul>
+		</nav>  
+		</head>
+	<div class="page-header">
+		{% if user.is_authenticated %}
+			<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+		{% endif%}
+			<h1><a href="/">Telefonos al dia</a></h1>
+			</div>
+		<div class="content container">
+			<div class="row">
+				<div class="col-md-8">
+				<section id=”intro”>
+		<!– Introduction –>
+		<h3> Bienvenido este blog esta dedicado a todo aquellos amantes de la tecnologia y quieren estar al tanto de las novedades que surgen actualmente.<h3>
+			
+		<br>
+		<br>
+	</section> 
+				<section>
+				<!– Main content area –>
+
+				{% block content %}
+				
+				{% endblock %}
+				</section>
+				
+				</section>
+	<form action="#" method="post">
+		<h3>Comentenos que le parecio el blog</h3>
+		<p>
+			<label for="name">Nombre</label>
+			<input name="name" id="name" type="text" required />
+		</p>
+		<p>
+			<label for="email">Correo Electronico</label>
+			<input name="email" id="email" type="email" required />
+		</p>
+		
+		<p>
+			<label for="comment">Comentario</label>
+			<textarea name="comment" id="comment" required></textarea>
+		</p>
+		<p><input type="submit" value="enviar" /></p>
+	</form>
+	<aside>
+			<section>
+				<header>
+					<h3>Categorias</h3>
+				</header>
+				<ul>
+					<li><a href="#">Notebook></li>
+					<li><a href="#">Tablet</a></li>
+					<li><a href="#">Smartwatch</a></li>
+					<li><a href="#">Tv</a></li>
+					<li><a href="#">Drones</a></li>
+				</ul>
+			</section>
+			<section>
+				<header>
+					<h3>Archives</h3>
+				</header>
+				<ul>
+					<li><a href="#">Noviembre 2017</a></li>
+					<li><a href="#">Octubre 2017</a></li>
+					<li><a href="#">Septiembre 2017</a></li>
+					<li><a href="#">Agosto 2017</a></li>
+					<li><a href="#">Julio 2017</a></li>
+					<li><a href="#">Junio 2017</a></li>
+					<li><a href="#">mas</a></li>
+				</ul>
+			</section>
+		</aside>
+				<footer>
+					<!– Footer –>
+					<h3>Redactado por: Miguel Martinez Solano</h3>
+				</footer>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
